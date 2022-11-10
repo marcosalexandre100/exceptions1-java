@@ -11,7 +11,7 @@ public class Reservation {
     private Date checkIn;
     private Date checkOut;
 
-    private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy"); //formatar a data //colocar como static que so vai precisar de um
 
     public Reservation(Integer roomNumber, Date checkIn, Date checkOut) {
         this.roomNumber = roomNumber;
@@ -35,8 +35,8 @@ public class Reservation {
         return checkOut;
     }
     public long duration(){
-        long diff = checkOut.getTime() - checkIn.getTime();
-        return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+        long diff = checkOut.getTime() - checkIn.getTime(); //devolve a quantidade de milesegundos
+        return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS); //converter millisegundos em dias
     }
     public void update(Date checkIn, Date checkOut){
         this.checkIn = checkIn;
